@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class AdbPage extends Component {
-    render() {
-        return (
-            <div>
-                This is ADB Page
-            </div>
-        )
-    }
+  render() {
+    return <div>This is ADB Page</div>;
+  }
 }
 
-export default AdbPage
+export default AdbPage;

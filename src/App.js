@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import './App.css'
+import React, { Component } from "react";
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
 
-import TransaksiPage from './pages/TransaksiPage'
-import AdbPage from './pages/AdbPage'
-import ModulePage from './pages/ModulePage'
-import EditModulePage from './pages/EditModulePage'
-import CreateNewModulePage from './pages/CreateNewModulePage'
+import TransaksiPage from "./pages/TransaksiPage";
+import AdbPage from "./pages/AdbPage";
+import ModulePage from "./pages/ModulePage";
+import EditModulePage from "./pages/EditModulePage";
+import CreateNewModulePage from "./pages/CreateNewModulePage";
 
 class App extends Component {
   render() {
-    return(
+    return (
       <React.Fragment>
         <Router>
           <ul className="nav">
@@ -39,8 +39,8 @@ class App extends Component {
           </div>
         </Router>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default App
+export default App;
