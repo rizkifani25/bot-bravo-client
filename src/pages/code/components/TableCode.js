@@ -1,16 +1,15 @@
 import React, { Component } from "react";
-import { get } from "../api/api";
+import { get } from "../../../api/api";
 
-import "../css/table.css";
+import "../style.css";
 
-class TableTransaction extends Component {
+class TableCode extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       data: [],
-      query: "",
-      limit: 50
+      query: ""
     };
   }
 
@@ -20,19 +19,12 @@ class TableTransaction extends Component {
     });
   };
 
-  updateLimit = evt => {
-    this.setState({
-      limit: evt.target.value
-    });
-  };
-
   componentDidMount = () => {
     const params = {
-      q: this.state.query,
-      limit: this.state.limit
+      q: this.state.query
     };
 
-    get("/allTransaction", params)
+    get("/allCode", params)
       .then(data => {
         this.setState({
           data: data["data"]
@@ -47,11 +39,10 @@ class TableTransaction extends Component {
     let code = event.keyCode || event.which;
     if (code === 13) {
       const params = {
-        q: this.state.query,
-        limit: this.state.limit
+        q: this.state.query
       };
 
-      get("/allTransaction", params)
+      get("/allCode", params)
         .then(data => {
           this.setState({
             data: data["data"]
@@ -72,57 +63,30 @@ class TableTransaction extends Component {
             <input
               className="form-control mr-sm-2"
               type="search"
-              placeholder="Transaksi ID"
+              placeholder="Code"
               aria-label="Search"
               value={this.state.query}
               onChange={evt => this.updateQuery(evt)}
-              onKeyPress={this.onSearchPress.bind(this)}
-            />
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Limit"
-              aria-label="Search"
-              value={this.state.limit}
-              onChange={evt => this.updateLimit(evt)}
               onKeyPress={this.onSearchPress.bind(this)}
             />
           </form>
           <table className="table custom-table table-sm">
             <thead>
               <tr>
-                <th scope="col">trxId</th>
-                <th scope="col">trxCode</th>
-                <th scope="col">trxTo</th>
-                <th scope="col">trxNominal</th>
-                <th scope="col">trxSN</th>
-                <th scope="col">trxStatus</th>
-                <th scope="col">trxDate</th>
-                <th scope="col">trxInfo</th>
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
               </tr>
             </thead>
             <tbody>
               {dbData.length ? (
                 dbData.map((data, i) => (
                   <tr key={i}>
-                    <td>{data.trxId}</td>
-                    <td>{data.trxCode}</td>
-                    <td>{data.trxTo}</td>
-                    <td>{data.trxNominal}</td>
-                    <td>{data.trxSN}</td>
-                    <td>{data.trxStatus}</td>
-                    <td>{data.trxDate}</td>
-                    <td>{data.trxInfo}</td>
+                    <td>{data.Code}</td>
+                    <td>{data.Name}</td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
                   <td>-</td>
                   <td>-</td>
                 </tr>
@@ -135,4 +99,4 @@ class TableTransaction extends Component {
   }
 }
 
-export default TableTransaction;
+export default TableCode;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import TableTransaction from "./components/TableTransaction";
 
-import TableTransaction from "../components/TableTransaction";
+import "./style.css";
 
 class TransaksiPage extends Component {
   render() {

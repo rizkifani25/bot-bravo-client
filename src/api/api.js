@@ -1,7 +1,7 @@
 import axios from "axios";
 import handleError from "./handleError/handleError";
 
-const URI = "http://192.168.1.7:5000";
+const URI = "http://" + process.env.REACT_APP_BASE_IP + ":5000";
 
 const getHeaders = () => {
   return {
