@@ -7,6 +7,10 @@ import AdbPage from "./pages/AdbPage";
 import ModulePage from "./pages/ModulePage";
 import EditModulePage from "./pages/EditModulePage";
 import CreateNewModulePage from "./pages/CreateNewModulePage";
+import CodePage from "./pages/CodePage";
+import DevicePage from "./pages/DevicePage";
+import AddNewCodePage from "./pages/AddNewCodePage";
+import AddNewDevicePage from "./pages/AddNewDevicePage";
 
 class App extends Component {
   render() {
@@ -29,6 +33,16 @@ class App extends Component {
                 <Link to="/modulepage">Modules</Link>
               </div>
             </li>
+            <li className="nav-item">
+              <div className="nav-link" href="#">
+                <Link to="/newdevicepage">Add New Device</Link>
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" href="#">
+                <Link to="/newcodepage">Add New Code</Link>
+              </div>
+            </li>
           </ul>
           <div>
             <Route exact path="/" component={TransaksiPage} />
@@ -36,6 +50,10 @@ class App extends Component {
             <Route path="/modulepage" component={ModulePage} />
             <Route path="/editmodulepage" component={EditModulePage} />
             <Route path="/newmodulepage" component={CreateNewModulePage} />
+            <Route path="/newdevicepage" component={DevicePage} />
+            <Route path="/newcodepage" component={CodePage} />
+            <Route path="/addnewcodepage" component={AddNewCodePage} />
+            <Route path="/addnewdevicepage" component={AddNewDevicePage} />
           </div>
         </Router>
       </React.Fragment>

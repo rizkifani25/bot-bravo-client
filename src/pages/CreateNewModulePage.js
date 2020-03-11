@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // Testing
 import "../css/form.css";
 import "../css/button.css";
-import { get, post } from "../api/api";
+import { get } from "../api/api";
 
 class CreateNewModulePage extends Component {
   constructor(props) {
